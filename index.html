@@ -10,8 +10,10 @@
 			background-image: url("https://res.cloudinary.com/dmdan5eni/image/upload/v1538241152/clouds_background.jpg");
 			background-repeat: no-repeat;
 			background-size: cover;
+			padding-bottom: 150px;
 		}
 		.outer-div{
+
 		}
 		.paper {
 			background: white;
@@ -45,9 +47,12 @@
 			height: 1px;
 			width: 100%;
 		}
+		#left-header-container{
+			display: flex;
+		}
 		#name-text{
 			color: #444;
-			font-size: 50px;
+			font-size: 70px;
 		}
 		#github-link{
 			width: 25px;
@@ -111,8 +116,14 @@
 			font-weight: bold;
 			font-size: 1em;
 		}
+		#main-content-container{
+			display: flex;
+			align-items: stretch;
+
+		}
 		#main-content{
 			width: 75%;
+			flex-grow: 2;
 		}
 		#writing-header{
 			height: 60px;
@@ -124,23 +135,23 @@
 			padding: 0 0;
 			margin: 0 0 10px 0;
 		}
-		#writing-section{
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-			align-items: center;
-			padding: 20px;
-		}
 		#writing-container{
-			width: 100%;
+			width: 30vw;
+			margin-left: 10px;
 			display: flex;
 			flex-direction: column;
 		}
 		#writing-divider{
 			width: 1px;
+			align-self: stretch;
+			margin: 0 10px;
 			background: lightgray;
 		}
 		#writing-links-container{
+		}
+		#profile-image{
+			height: 120;			
+			margin-right: 20px;
 		}
 	</style>
 	<title>Ryan Maciel</title>
@@ -154,37 +165,40 @@
 			</div>
 			<div class="paper" id="main-page">
 				<div id="page-header">
-					<div id="left-header">
-						<div id="name-text">Ryan Maciel</div>
-						Student * Developer * Tutor
+					<div id="left-header-container">
+						<img id="profile-image" src="https://res.cloudinary.com/dmdan5eni/image/upload/v1563839320/ryan.jpg"/>
+						<div id="left-header">
+							<div id="name-text">Ryan Maciel</div>
+							Student * Developer * Tutor
+						</div>
 					</div>
 					<div id="right-header">
+						<a target="_parent" href="https://res.cloudinary.com/dmdan5eni/image/upload/v1559701660/Resume_technical_6.pdf">* resume</a>
+						<a target="_parent" href="https://www.linkedin.com/in/ryan-maciel-2734b9170">* linkedin</a>	
 						<a target="_parent" href="https://www.github.com/RyanMaciel">* github</a>
-
-						<a target="_parent" href="https://res.cloudinary.com/dmdan5eni/image/upload/v1559701660/Resume_technical_6.pdf">
-							* resume
-						</a>
 						<a target="_parent" href="https://www.codementor.io/rmdevelopment">
 							* codementor
 						</a>
 						<a target="_parent" href="https://stackoverflow.com/users/1189724/67cherries">
 							* stackoverflow
 						</a>
-						<a target="_parent" href="./seurat.html">* writing</a>
 					</div>
 				</div>
 				<div id="header-divider">
 				</div>
-				<div id="main-content">
-					<p>I am a computer science major at the University of Rochester with plans to graduate in Spring of 2022. I have been developing software products for several years and have worked on projects ranging from personal demos to corporate platforms. I have also had the opportunity to tutor middle school and high school students in Introductory Programming classes in 2015-2016.</p>
-					<p>Outside of Computer Science I am interested in photography, art history, and music (see music review web scraper below)</p>
-				</div>
-				<div id="writing-container">
-					<div id="writing-header">
-						Writing
+				<div id="main-content-container">
+					<div id="main-content">
+						<p>I am a computer science major at the University of Rochester with plans to graduate in Spring of 2022. I have been developing software products for several years and have worked on projects ranging from personal demos to corporate platforms. I have also had the opportunity to tutor middle school and high school students in Introductory Programming classes in 2015-2016.</p>
+						<p>Outside of Computer Science I am interested in photography, art history, and music (see music review web scraper below)</p>
 					</div>
-					<div id="writing-links-container">
-						<a target="_parent" href="./seurat.html">Analysis of Seurat's "Circus Sideshow"</a>
+					<div id="writing-divider"></div>
+					<div id="writing-container">
+						<div id="writing-header">
+							Writing
+						</div>
+						<div id="writing-links-container">
+							<a target="_parent" href="./seurat.html">* Seurat's <i>Circus Sideshow</i> Analysis</a>
+						</div>
 					</div>
 				</div>
 				<!--<div id="content-revealer">

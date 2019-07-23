@@ -1,0 +1,71 @@
+<html>
+    <style>
+        canvas{
+            background-color: beige;
+        }
+    </style>
+<body>
+    <canvas id="test" width="500px" height="350px"></canvas>
+</body>
+<script type="text/javascript">
+    const canvas = document.getElementById('test');
+    const ctx = canvas.getContext('2d');
+
+    function brokenLine(x1, y1, x2, y2, context){
+        const middleMargin = 10;
+
+        const sideLineLength = (Math.abs(x2-x1) / 2) - middleMargin/2;
+        line(x1, y1, x1 + sideLineLength, y1, context);
+        
+        diagonalAtPoint(x1 + sideLineLength, y1, context);
+
+        diagonalAtPoint(x2 - sideLineLength, y1, context);
+        line(x2 - sideLineLength, y1, x2, y2, context);
+        //line(0, 100, 100, 100, context);
+        //line(85, 115, 115, 85, context);
+    }
+    function diagonalAtPoint(x1, y1, context){
+        const diagonalLength = 30;
+        const offset = Math.sqrt(diagonalLength)
+        line(x1 - offset, y1 + offset, x1 + offset, y1 - offset, context);
+    }
+    function line(x1, y1, x2, y2, context) {
+        context.moveTo(x1, y1);
+        context.lineTo(x2, y2);
+    }
+
+    function dotWithLabel(x, y, label, context){
+        context.ellipse(x, y, 2, 2, 0, 2* Math.PI, 0);
+        context.fillText(label, x, y + 20);
+    }
+    function drawLinks(data){
+        
+        if(data.groups.length == 1){
+            
+        }
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = `rgba(0, 0, 0, 1)`;
+        ctx.beginPath();
+
+        line(50, 75, 50, 100, ctx);
+        brokenLine(50, 100, 100, 100, ctx);
+        line(100, 100, 100, 75, ctx);
+        line(100, 75, 150, 75, ctx);
+        ctx.stroke();
+
+        ctx.beginPath();
+        dotWithLabel(155, 75, 'HELLO', ctx);
+        ctx.fill();
+    }
+    
+
+    drawLinks({
+        groups:[
+            {
+                dateLabel: 'Jan 10, 2019',
+                linkName: 'Suerat Analysis'
+            }
+        ]
+    });
+</script>
+</html>
